@@ -1,0 +1,13 @@
+import express from 'express';
+import { isValidId, validateBody } from 'middlewares';
+import { orderSchema, updateOrderSchema } from 'schemas';
+import ctrl from '../../controllers/orders';
+
+const router = express.Router();
+
+router.get('/', ctrl.listOrders);
+router.post('/', validateBody(orderSchema), ctrl.addOrder);
+router.delete('/:orderId', ctrl.removeOrder);
+router.put('/:orderId', isValidId, validateBody(updateOrderSchema), ctrl.updateOrder);
+
+export default router;
