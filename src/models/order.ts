@@ -10,11 +10,12 @@ const schema = new Schema(
     price: { type: Number, required: true },
     completeSet: { type: String },
     comment: { type: String },
+    status: { type: String, required: true },
   },
   { versionKey: false, timestamps: true }
 );
 
 type Order = InferSchemaType<typeof schema>;
-const OrderModel = model('Order', schema);
+const OrderModel = model('order', schema);
 
 export default OrderModel;
