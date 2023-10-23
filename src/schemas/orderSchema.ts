@@ -7,8 +7,9 @@ const orderSchema = Joi.object({
   phone: Joi.string().required(),
   repairType: Joi.string().required(),
   price: Joi.number().min(1).required(),
-  completeSet: Joi.string(),
-  comment: Joi.string(),
+  completeSet: Joi.string().optional().allow(''),
+  comment: Joi.string().optional().allow(''),
+  status: Joi.string().required(),
 }).meta({ className: 'Order', unknownType: 'number' });
 
 export default orderSchema;
