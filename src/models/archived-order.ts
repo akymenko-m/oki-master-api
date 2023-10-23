@@ -15,7 +15,7 @@ const schema = new Schema(
   { versionKey: false, timestamps: true }
 );
 
-type Order = InferSchemaType<typeof schema>;
-const OrderModel = model('order', schema);
+type OrderArchive = InferSchemaType<typeof schema>;
+const OrderArchiveModel = model('archive-order', schema);
 
-export default OrderModel;
+export default OrderArchiveModel;
