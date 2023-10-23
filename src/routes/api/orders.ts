@@ -6,8 +6,9 @@ import ctrl from '../../controllers/orders';
 const router = express.Router();
 
 router.get('/', ctrl.listOrders);
+router.get('/search/', ctrl.getByQuery);
 router.post('/', validateBody(orderSchema), ctrl.addOrder);
-router.delete('/:orderId', ctrl.removeOrder);
-router.put('/:orderId', isValidId, validateBody(updateOrderSchema), ctrl.updateOrder);
+router.delete('/:orderId', isValidId, ctrl.removeOrder);
+router.patch('/:orderId', isValidId, validateBody(updateOrderSchema), ctrl.updateOrder);
 
 export default router;
