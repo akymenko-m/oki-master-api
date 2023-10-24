@@ -6,6 +6,7 @@ import ctrl from '../../controllers/orders';
 const router = express.Router();
 
 router.get('/', ctrl.listOrders);
+router.get('/findOne/', ctrl.getOrder);
 router.get('/search/', ctrl.getByQuery);
 router.post('/', validateBody(orderSchema), ctrl.addOrder);
 router.delete('/:orderId', isValidId, ctrl.removeOrder);
