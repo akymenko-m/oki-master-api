@@ -1,11 +1,15 @@
 import { Request, Response, NextFunction } from 'express';
 import { HttpError, ctrlWrapper } from 'helpers';
 import { OrderArchiveModel } from 'models';
+import { PER_PAGE } from './orders';
 
 const getAllOrders = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
-  const result = await OrderArchiveModel.find();
+  const { page = 1 } = req.query;
+  const limit = PER_PAGE * Number(page);
+  const total = await OrderArchiveModel.find().sort({ date: 1 });
+  const result = await OrderArchiveModel.find().sort({ date: 1 }).skip(0).limit(limit);
 
-  res.json(result);
+  res.json({ total: total.length, orders: result });
 };
 
 const getByQuery = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
