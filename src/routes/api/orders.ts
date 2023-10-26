@@ -1,6 +1,6 @@
 import express from 'express';
-import { isValidId, validateBody } from 'middlewares';
-import { orderSchema, updateOrderSchema } from 'schemas';
+import { isValidId, validateBody } from '../../middlewares';
+import { orderSchema, updateOrderSchema } from '../../schemas';
 import ctrl from '../../controllers/orders';
 
 const router = express.Router();

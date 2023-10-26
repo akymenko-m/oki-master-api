@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
-import { HttpError } from 'helpers';
 import { isValidObjectId } from 'mongoose';
+import { HttpError } from '../helpers';
 
 const isValidId = (req: Request, res: Response, next: NextFunction) => {
   const { orderId } = req.params;

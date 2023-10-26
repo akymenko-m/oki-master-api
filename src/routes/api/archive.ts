@@ -1,6 +1,6 @@
 import express from 'express';
-import { isValidId, validateBody } from 'middlewares';
-import { OrderArchiveModel } from 'models';
+import { isValidId, validateBody } from '../../middlewares';
+import { OrderArchiveModel } from '../../models';
 import archiveCtrl from '../../controllers/archive';
 
 const router = express.Router();

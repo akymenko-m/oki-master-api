@@ -1,7 +1,7 @@
 import cors from 'cors';
 import express, { Request, Response, NextFunction, ErrorRequestHandler } from 'express';
 import dotenv from 'dotenv';
-import { archiveRouter, ordersRouter } from 'routes/api';
+import { archiveRouter, ordersRouter } from './routes/api';
 
 dotenv.config();
 
