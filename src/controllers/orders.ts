@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
-import { HttpError, ctrlWrapper } from 'helpers';
-import { OrderModel } from 'models';
+import { HttpError, ctrlWrapper } from '../helpers';
+import { OrderModel } from '../models';
 
 export const PER_PAGE = 10;
 

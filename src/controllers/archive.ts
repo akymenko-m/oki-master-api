@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
-import { HttpError, ctrlWrapper } from 'helpers';
-import { OrderArchiveModel } from 'models';
+import { HttpError, ctrlWrapper } from '../helpers';
 import { PER_PAGE } from './orders';
+import { OrderArchiveModel } from '../models';
 
 const getAllOrders = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   const { page = 1 } = req.query;
